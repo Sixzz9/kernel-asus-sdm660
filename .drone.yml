@@ -1,0 +1,17 @@
+--- 
+clone: 
+  depth: 1
+kind: pipeline
+name: Frost Project
+steps: 
+  - 
+    commands: 
+      - "curl https://raw.githubusercontent.com/frostid/scripts/master/X01BD.sh | bash"
+    environment: 
+      TELEGRAM_TOKEN: 
+        from_secret: BOT_API_KEY
+    image: fadlyas/kernel_dockerfile:latest
+    name: compile
+    trigger: 
+      branch: 
+        - moonlight
